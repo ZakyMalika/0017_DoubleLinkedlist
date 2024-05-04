@@ -236,7 +236,7 @@ int main()
 				return 0;
 			default:
 				cout << "\nInvalid option" << endl;
-				break;
+				break; 
 			}
 		}
 		catch ()
