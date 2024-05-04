@@ -175,3 +175,10 @@ void revtranverse()
 	}
 }
 
+void searchData()
+{
+	if (ListEmpty() == true)
+	{
+
+	}
+}
