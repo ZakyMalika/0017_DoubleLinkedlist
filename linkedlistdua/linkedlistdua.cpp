@@ -136,3 +136,8 @@ bool ListEmpty()
 {
 	return (START == NULL);
 }
+
+void tranverse()
+{
+	
+}
