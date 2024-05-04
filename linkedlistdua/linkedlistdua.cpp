@@ -95,4 +95,40 @@ void deletionNode()
 	}
 
 	current = START; // step 1: start from the first node
+	previous = NULL;
+
+	// locate the node to be deleted
+	while (current != NULL && current->noMhs != rollNo)
+	{
+		previous = current;
+		current = current->next;
+	}
+	if (current == NULL)
+	{
+		cout << "\033[31mThe record with roll number " << rollNo << " not found\033[0m" << endl;
+		return;
+	}
+
+	// node top be deleted is the first node
+	if (current == START)
+	{
+		START = START->next;	// step 2: update the START pointer
+		if (START != NULL)
+		{
+			START->prev = NULL;	
+		}
+	}
+	else
+	{	// Node to be the deleted is not the forst node
+		previous->next = current->next;
+		if (current->next != NULL)
+		{	// if there's a succesor, update its prev pointer
+			current->next->prev = previous;
+		}
+	}
+
+	//release the memory of the node marked as current
+	delete current;
+	cout << "\x1b[32mRecord with roll number " << rollNo << " delete\x1b[0m" << endl;
 }
+
