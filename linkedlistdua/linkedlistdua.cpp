@@ -155,3 +155,8 @@ void tranverse()
 		}
 	}
 }
+
+void revtranverse()
+{
+
+}
